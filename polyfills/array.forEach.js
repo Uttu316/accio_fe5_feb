@@ -12,9 +12,9 @@ if (!Array.prototype.forEach) {
   Array.prototype.forEach = function (callback) {
     const arr = this;
 
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
       if (typeof callback === "function") {
-        callback(arr[i], i, array);
+        callback(arr[i], i, arr);
       } else {
         throw new Error("callback is not a function");
       }
