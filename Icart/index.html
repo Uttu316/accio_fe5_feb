@@ -1,113 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./styles/main.css" rel="stylesheet" />
     <link href="./styles/home.css" rel="stylesheet" />
     <title>Icart</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <header class="header_body">
-      <h1 class="header_logo">Icart</h1>
-      <nav class="header_nav">
-        <ul class="header_nav_list">
-          <li class="header_nav_list_item">
-            <a class="header_nav_list_item_a" href="#about">About</a>
-          </li>
-          <li class="header_nav_list_item">
-            <a id="cart_btn" href="" class="header_nav_list_item_a"
-              >Cart<span id="cart_count">0</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+        <h1 class="header_logo">Icart</h1>
+        <nav class="header_nav">
+            <ul class="header_nav_list">
+                <li class="header_nav_list_item">
+                    <a class="header_nav_list_item_a" href="#about">About</a>
+                </li>
+                <li class="header_nav_list_item">
+                    <a id="cart_btn" href="" class="header_nav_list_item_a">Cart<span id="cart_count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero_banner">
-      <h2 class="hero_banner_heading_a">Keep Shopping</h2>
-      <h3 class="hero_banner_heading_b">With</h3>
-      <h2 class="hero_banner_heading_c">Icart</h2>
+        <h2 class="hero_banner_heading_a">Keep Shopping</h2>
+        <h3 class="hero_banner_heading_b">With</h3>
+        <h2 class="hero_banner_heading_c">Icart</h2>
     </section>
 
     <section class="container">
-      <h3 class="container_heading">
-        Products
-        <hr class="title_bar" />
-      </h3>
-      <div class="filters_container">
-        <div class="filters">
-          <label class="filter_label"> Filter By: </label>
-          <select id="category_filter" class="filter">
-            <option>Choose Category</option>
-            <option>A</option>
-            <option>B</option>
-          </select>
-          <label class="filter_label"> Sorty By: </label>
-          <select id="sort_filter" class="filter">
-            <option>Sort Price</option>
-            <option>Higer to Lower</option>
-            <option>Lower to Higher</option>
-          </select>
+        <h3 class="container_heading">
+            Products
+            <hr class="title_bar" />
+        </h3>
+        <div class="filters_container">
+            <div class="filters">
+                <label class="filter_label"> Filter By: </label>
+                <select id="category_filter" class="filter">
+                    <option>Choose Category</option>
+                    <option>A</option>
+                    <option>B</option>
+                </select>
+                <label class="filter_label"> Sorty By: </label>
+                <select id="sort_filter" class="filter">
+                    <option>Sort Price</option>
+                    <option>Higer to Lower</option>
+                    <option>Lower to Higher</option>
+                </select>
+            </div>
+            <div class="search_box">
+                <input placeholder="Search here.." />
+            </div>
         </div>
-        <div class="search_box">
-          <input placeholder="Search here.." />
+        <div id="products" class="products_container">
+            <div id="no_product" class="product_error">
+                No Product Available
+            </div>
+            <div id="someting_wrong_product" class="product_error">
+               Something Went Wrong
+            </div>
         </div>
-      </div>
-      <div id="products" class="products_container">
-        <div class="product_card">
-          <div class="product_img">
-            <img
-              src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-            />
-          </div>
-          <div class="product_content">
-            <p class="product_title">Title</p>
-            <p class="product_brand">Brand</p>
-            <p class="product_stats">
-              <span class="product_rating"> 5 ⭐ </span>
-              <span class="product_discout"> 20% off </span>
-            </p>
-            <p class="product_price">549 Rs.</p>
-            <button class="add_cart_btn">Add to Cart</button>
-          </div>
         </div>
-        <div class="product_card">
-          <div class="product_img">
-            <img
-              src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-            />
-          </div>
-          <div class="product_content">
-            <p class="product_title">Title</p>
-            <p class="product_brand">Brand</p>
-            <p class="product_stats">
-              <span class="product_rating"> 5 ⭐ </span>
-              <span class="product_discout"> 20% off </span>
-            </p>
-            <p class="product_price">549 Rs.</p>
-            <button class="add_cart_btn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="product_card">
-          <div class="product_img">
-            <img
-              src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
-            />
-          </div>
-          <div class="product_content">
-            <p class="product_title">Title</p>
-            <p class="product_brand">Brand</p>
-            <p class="product_stats">
-              <span class="product_rating"> 5 ⭐ </span>
-              <span class="product_discout"> 20% off </span>
-            </p>
-            <p class="product_price">549 Rs.</p>
-
-            <button class="add_cart_btn">Add to Cart</button>
-          </div>
-        </div>
-      </div>
     </section>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <script src="./scripts/main.js"></script>
+</body>
+
 </html>
