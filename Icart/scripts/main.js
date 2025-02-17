@@ -1,4 +1,4 @@
-const api = async () => {
+export const api = async () => {
   const url = "https://api.freeapi.app/api/v1/public/randomproducts";
   try {
     const res = await fetch(url, {
@@ -16,63 +16,3 @@ const api = async () => {
     throw e;
   }
 };
-
-const createProduct = (product) => {
-  const { thumbnail, price, title, brand, rating, discountPercentage } =
-    product;
-  const prodcutCard = $(` <div class="product_card">
-                <div class="product_img">
-                    <img src=${thumbnail} />
-                </div>
-                <div class="product_content">
-                    <p class="product_title">${title}</p>
-                    <p class="product_brand">${brand}</p>
-                    <p class="product_stats">
-                        <span class="product_rating"> ${Math.ceil(
-                          rating
-                        )} ⭐ </span>
-                        <span class="product_discout"> ${Math.ceil(
-                          discountPercentage
-                        )}% off </span>
-                    </p>
-                    <p class="product_price">${Math.ceil(price)} Rs.</p>
-                </div>
-                 <button class="add_cart_btn">Add to Cart</button>
-            </div>`);
-  return prodcutCard;
-};
-
-const showProducts = (products) => {
-  const container = $("#products");
-
-  const productCards = products.map((product) => createProduct(product));
-
-  container.append(productCards);
-};
-
-const getProducts = async () => {
-  try {
-    const res = await api();
-    if (res && res.data && res.data.length) {
-      const products = res.data;
-
-      showProducts(products);
-    } else {
-      //show no product avaialble
-      showNotAvailable();
-    }
-  } catch (e) {
-    // show error on screen
-    showSomethingWrong();
-  }
-};
-
-function showSomethingWrong() {
-  $("#someting_wrong_product").show();
-}
-
-function showNotAvailable() {
-  $("#no_product").show();
-}
-
-getProducts();
