@@ -1,0 +1,46 @@
+
+
+
+
+.assignment_form{
+    margin: 20px auto;
+    border: 1px solid gray;
+    border-radius: 8px;
+    width:  400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input_item{
+    display: flex;
+    flex-direction: column;
+}
+.input_item label{
+    margin-bottom: 4px;
+    color:  teal;
+    font-weight: bold;
+}
+.input_item input{
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid gray;
+}
+.input_item input:focus{
+    outline: 1px solid coral;
+}
+
+.assignment_form_btn{
+    padding: 8px 16px;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.assignment_form_btn:hover{
+background-color: rgb(6, 105, 105);
+}
