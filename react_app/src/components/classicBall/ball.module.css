@@ -1,0 +1,10 @@
+
+
+
+.ball{
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}

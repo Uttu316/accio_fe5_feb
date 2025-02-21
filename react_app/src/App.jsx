@@ -1,13 +1,13 @@
-import AssignmentForm from "./components/assingments/form";
-import Counter from "./components/counter";
-import Header from "./components/header";
+import ClassCounter from "./components/classCounter";
+import ClassicBall from "./components/classicBall";
+import Assignments from "./pages/Assignments";
 
 const App = () => {
   return (
     <div>
-      <Header title={"Courses"} />
-      <Counter />
-      <AssignmentForm />
+      <Assignments />
+      <ClassCounter start={10} />
+      <ClassicBall />
     </div>
   );
 };

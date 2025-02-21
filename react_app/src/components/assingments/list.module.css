@@ -1,0 +1,29 @@
+
+
+.assignment_list{
+    margin: 40px auto;
+    border: 1px solid gray;
+    background-color: lightgoldenrodyellow;
+    padding: 16px;
+    width: 50%;
+    min-width: 400px;
+    border-radius: 8px;
+}
+
+.assignment_list_item{
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+}
+.assignment_list_item a{
+    text-decoration: none;
+    color: brown;
+}
+.assignment_list_item a:hover{
+    color: blue;
+}
+.heading{
+    font-size: 24px;
+    color: teal;
+    margin-bottom: 20px;
+}
