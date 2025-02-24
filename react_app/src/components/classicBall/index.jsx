@@ -1,46 +1,52 @@
-import { Component } from "react";
+import React, { Component, useState } from "react";
 import styles from "./ball.module.css";
 
-class ClassicBall extends Component {
-  constructor() {
-    super();
+class App extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      started: false,
-      pos: 0,
+      renderBall: false,
+      posi: 0,
     };
-
-    this.onStart = this.onStart.bind(this);
+    this.renderChoice = this.renderBallOrButton.bind(this);
+    this.buttonClickHandler = this.buttonClickHandler.bind(this);
     this.onMove = this.onMove.bind(this);
   }
 
-  onStart() {
-    this.setState({ started: true });
+  buttonClickHandler() {
+    this.setState({ renderBall: true });
+  }
+  renderBallOrButton() {
+    if (this.state.renderBall) {
+      return (
+        <div className={styles.ball} style={{ left: this.state.posi }}></div>
+      );
+    } else {
+      return (
+        <button className="start" onClick={this.buttonClickHandler}>
+          Start
+        </button>
+      );
+    }
   }
   onMove() {
-    this.setState({ pos: this.state.pos + 5 });
+    this.setState({ posi: this.state.posi + 5 });
   }
+
+  // bind ArrowRight keydown event
+  componentDidMount() {
+    const onMove = this.onMove;
+    window.addEventListener("keydown", function (e) {
+      const key = e.key;
+      if (key === "ArrowRight") {
+        onMove();
+      }
+    });
+  }
+
   render() {
-    const isStarted = this.state.started;
-    const pos = this.state.pos;
-    return (
-      <div>
-        {!isStarted && (
-          <button onClick={this.onStart} className={styles.start}>
-            Start
-          </button>
-        )}
-        {isStarted && (
-          <div>
-            <div
-              style={{ transform: `translate(${pos}px)` }}
-              className={styles.ball}
-            ></div>
-            <button onClick={this.onMove}> Move</button>
-          </div>
-        )}
-      </div>
-    );
+    return <div className="playground">{this.renderBallOrButton()}</div>;
   }
 }
 
-export default ClassicBall;
+export default App;
