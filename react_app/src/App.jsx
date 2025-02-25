@@ -1,13 +1,11 @@
-import ClassCounter from "./components/classCounter";
-import ClassicBall from "./components/classicBall";
 import Assignments from "./pages/Assignments";
+import Home from "./pages/home";
 
 const App = () => {
   return (
     <div>
-      <Assignments />
-      <ClassCounter start={10} />
-      <ClassicBall />
+      {/* <Assignments /> */}
+      <Home />
     </div>
   );
 };
