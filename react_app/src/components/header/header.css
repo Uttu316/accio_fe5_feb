@@ -21,10 +21,22 @@
     list-style: none;
 }
 .nav_list_item{
-    padding: 8px 10px;
     cursor: pointer;
     border-radius: 4px;
+    color: gray;
 }
 .nav_list_item:hover{
     background-color: rgb(232, 252, 252);
+}
+.nav_list_item a{
+    color: inherit;
+    padding: 8px 10px;
+    display: block;
+    text-decoration: none;
+}
+.active{
+    background-color: rgb(232, 252, 252);
+}
+.pending{
+    color: orange;
 }

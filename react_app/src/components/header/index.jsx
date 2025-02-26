@@ -1,7 +1,11 @@
+import { isLoggedIn } from "../../utils/auth";
 import "./header.css";
+import NavItem from "./navItem";
 
 const Header = (props) => {
   const { title } = props;
+
+  const isLogIn = isLoggedIn();
 
   return (
     <header className="header">
@@ -9,10 +13,15 @@ const Header = (props) => {
 
       <nav>
         <ul className="nav_list">
-          <li className="nav_list_item">Home</li>
-          <li className="nav_list_item">Topics</li>
-          <li className="nav_list_item">Projects</li>
-          <li className="nav_list_item">Assignments</li>
+          <NavItem to={"/"} label={"Home"} />
+          {!isLogIn && <NavItem to={"/login"} label={"Signin"} />}
+          {isLogIn && (
+            <>
+              <NavItem to={"/topics"} label={"Topics"} />
+              <NavItem to={"/projects"} label={"Projects"} />
+              <NavItem to={"/assignments"} label={"Assignments"} />
+            </>
+          )}
         </ul>
       </nav>
     </header>
