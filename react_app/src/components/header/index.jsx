@@ -7,6 +7,10 @@ const Header = (props) => {
 
   const isLogIn = isLoggedIn();
 
+  const onLogout = () => {
+    localStorage.removeItem("token");
+  };
+
   return (
     <header className="header">
       <p className="logo">{title}</p>
@@ -20,6 +24,7 @@ const Header = (props) => {
               <NavItem to={"/topics"} label={"Topics"} />
               <NavItem to={"/projects"} label={"Projects"} />
               <NavItem to={"/assignments"} label={"Assignments"} />
+              <NavItem to={"/login"} onClick={onLogout} label={"Signout"} />
             </>
           )}
         </ul>

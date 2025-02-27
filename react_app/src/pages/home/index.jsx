@@ -1,6 +1,6 @@
 import Header from "../../components/header";
 
-const Home = (props) => {
+const Home = () => {
   return (
     <div id="home_page">
       <Header title={"Hello"} />

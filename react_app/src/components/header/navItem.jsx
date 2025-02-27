@@ -1,10 +1,11 @@
 import { NavLink } from "react-router";
 import "./header.css";
 
-const NavItem = ({ label, to }) => {
+const NavItem = ({ label, to, onClick }) => {
   return (
     <li className="nav_list_item">
       <NavLink
+        onClick={onClick}
         className={({ isActive, isPending }) =>
           isPending ? "pending" : isActive ? "active" : ""
         }
