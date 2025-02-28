@@ -1,4 +1,3 @@
-import Header from "../../components/header";
 import PageWrapper from "../../components/pageWrapper";
 import Products from "../../components/productsList";
 
