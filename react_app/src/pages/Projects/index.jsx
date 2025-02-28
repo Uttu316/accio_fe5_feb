@@ -1,13 +1,12 @@
 import Header from "../../components/header";
+import PageWrapper from "../../components/pageWrapper";
 import Products from "../../components/productsList";
 
 const Projects = (props) => {
   return (
-    <div id="projects_page">
-      <Header title={"Projects"} />
-
+    <PageWrapper id="projects_page" title={"Projects"}>
       <Products />
-    </div>
+    </PageWrapper>
   );
 };
 

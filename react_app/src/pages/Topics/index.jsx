@@ -1,10 +1,10 @@
-import Header from "../../components/header";
+import PageWrapper from "../../components/pageWrapper";
 
 const Topics = () => {
   return (
-    <div id="topics_page">
-      <Header title={"Topics"} />
-    </div>
+    <PageWrapper id="topics_page" title={"Topics"}>
+      <h1>Best Curiculam</h1>
+    </PageWrapper>
   );
 };
 

@@ -1,12 +1,12 @@
 import Header from "../../components/header";
 import LoginForm from "../../components/loginForm";
+import PageWrapper from "../../components/pageWrapper";
 
 const SignIn = () => {
   return (
-    <div id="sigin_page">
-      <Header title={"SignIn"} />
+    <PageWrapper title={"SignIn"} id="sigin_page">
       <LoginForm />
-    </div>
+    </PageWrapper>
   );
 };
 

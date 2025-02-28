@@ -1,12 +1,15 @@
-import Assignments from "./pages/Assignments";
-import Home from "./pages/home";
+import { lazy } from "react";
+
 import { BrowserRouter, Route, Routes } from "react-router";
-import Topics from "./pages/Topics";
-import Projects from "./pages/Projects";
-import NotFound from "./pages/NotFound";
-import SignIn from "./pages/Signin";
-import { PrivateRoute, ProtectedRoute } from "./routes";
-import Product from "./pages/Product";
+
+const Assignments = lazy(() => import("./pages/Assignments"));
+const Home = lazy(() => import("./pages/home"));
+const Topics = lazy(() => import("./pages/Topics"));
+const Projects = lazy(() => "./pages/Projects");
+const NotFound = lazy(() => "./pages/NotFound");
+const SignIn = lazy(() => "./pages/Signin");
+const { PrivateRoute, ProtectedRoute } = lazy(() => "./routes");
+const Product = lazy(() => "./pages/Product");
 
 const App = () => {
   return (

@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import { useEffect, useState } from "react";
 import { getProduct } from "../../services/productServices";
 import useAPIStatus from "../../hooks/useAPIStatus";
+import PageWrapper from "../../components/pageWrapper";
 
 const Product = () => {
   const { productId } = useParams();
@@ -34,8 +35,7 @@ const Product = () => {
     fetchProduct();
   }, [productId]);
   return (
-    <div id={`prodcut-page-${productId}`}>
-      <Header title="Product" />
+    <PageWrapper id={`prodcut-page-${productId}`} title="Product">
       {isLoading && <h2>Loading....</h2>}
       {isError && <h2>Something Went wrong</h2>}
       {noProduct && <h2>Product Not Available</h2>}
@@ -45,7 +45,7 @@ const Product = () => {
           <h3>{product.price}Rs</h3>
         </div>
       )}
-    </div>
+    </PageWrapper>
   );
 };
 

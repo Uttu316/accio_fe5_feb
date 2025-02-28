@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./form.module.css";
+import { AssignmentContext } from "../../contexts/AssginmentContext";
 
-const AssignmentForm = (props) => {
-  const { setAssignments } = props;
+const AssignmentForm = () => {
+  const { setAssignments } = useContext(AssignmentContext);
   const [data, setData] = useState({
     name: "",
     url: "",

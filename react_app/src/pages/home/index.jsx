@@ -1,10 +1,10 @@
-import Header from "../../components/header";
+import PageWrapper from "../../components/pageWrapper";
 
 const Home = () => {
   return (
-    <div id="home_page">
-      <Header title={"Hello"} />
-    </div>
+    <PageWrapper id="home_page" title={"Hello"}>
+      <h1>Learn CODE Success</h1>
+    </PageWrapper>
   );
 };
 

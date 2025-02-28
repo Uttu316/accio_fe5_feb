@@ -2,17 +2,17 @@ import { useState } from "react";
 import AssignmentForm from "../../components/assingments/form";
 import AssignmentsList from "../../components/assingments/list";
 import Header from "../../components/header";
-import { assignments as data } from "../../utils/data/assignments";
+import AssingmentProvider from "../../contexts/AssginmentContext";
 
 const Assignments = (props) => {
-  const [assingments, setAssignments] = useState(data);
-
   return (
     <div id="assingment_page">
       <Header title={"Assingments"} />
 
-      <AssignmentForm setAssignments={setAssignments} />
-      <AssignmentsList assingments={assingments} />
+      <AssingmentProvider>
+        <AssignmentForm />
+        <AssignmentsList />
+      </AssingmentProvider>
     </div>
   );
 };
